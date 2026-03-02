@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Дополнительное образование | ПЦК Физико-математических дисциплин</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/browser-fix.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<style>
+    /* УЛУЧШЕННЫЙ СТИЛЬ ДЛЯ СТРАНИЦЫ ДОПОЛНИТЕЛЬНОГО ОБРАЗОВАНИЯ */
+    
+    /* Введение */
+    .intro-section {
+        padding: 60px 0;
+    }
+    
+    .intro-content h2 {
+        font-size: 2.5rem;
+        margin-bottom: 25px;
+        color: var(--text-light);
+    }
+    
+    .intro-content > p {
+        color: var(--text-muted-light);
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin-bottom: 40px;
+        max-width: 800px;
+    }
+    
+    .intro-features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 25px;
+        margin-top: 50px;
+    }
+    
+    .feature {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 20px;
+        background: var(--bg-card-light);
+        border-radius: 16px;
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+    }
+    
+    .feature:hover {
+        border-color: var(--primary);
+        transform: translateY(-5px);
+    }
+    
+    .feature i {
+        color: var(--primary);
+        font-size: 1.5rem;
+        width: 40px;
+        text-align: center;
+    }
+    
+    .feature span {
+        color: var(--text-light);
+        font-weight: 600;
+        font-size: 1rem;
+    }
+    
+    /* Программы - обновленный дизайн */
+    .programs-section {
+        padding: 80px 0;
+    }
+    
+    .programs-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 40px;
+    }
+    
+    .program-card {
+        background: var(--bg-card-light);
+        border-radius: 20px;
+        overflow: hidden;
+        border: 2px solid transparent;
+        transition: all 0.4s ease;
+        position: relative;
+    }
+    
+    .program-card:hover {
+        transform: translateY(-15px) scale(1.02);
+        box-shadow: var(--shadow-xl);
+        border-color: var(--primary);
+    }
+    
+    .program-header {
+        background: var(--bg-gradient);
+        color: white;
+        padding: 40px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .program-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><circle cx="50" cy="50" r="40" fill="none" stroke="white" stroke-width="2"/></svg>');
+        background-size: 250px;
+        animation: float 20s linear infinite;
+    }
+    
+    .program-header h3 {
+        color: white;
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .program-duration {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        position: relative;
+        z-index: 1;
+        font-weight: 500;
+        background: rgba(255, 255, 255, 0.2);
+        display: inline-block;
+        padding: 8px 20px;
+        border-radius: 25px;
+        backdrop-filter: blur(10px);
+    }
+    
+    .program-body {
+        padding: 40px;
+    }
+    
+    .program-body > p {
+        color: var(--text-muted-light);
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin-bottom: 30px;
+    }
+    
+    .program-features {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 30px;
+    }
+    
+    .program-features li {
+        margin-bottom: 15px;
+        padding-left: 35px;
+        position: relative;
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--text-muted-light);
+    }
+    
+    .program-features li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: var(--success);
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+    
+    .program-audience {
+        margin-top: 25px;
+        padding-top: 25px;
+        border-top: 1px solid var(--border-light);
+        font-size: 1.05rem;
+        color: var(--text-muted-light);
+    }
+    
+    .program-audience strong {
+        color: var(--primary);
+    }
+    
+    /* Преимущества */
+    .advantages-section {
+        padding: 80px 0;
+        background: linear-gradient(135deg, rgba(79, 70, 229, 0.03), rgba(6, 182, 212, 0.03));
+        border-radius: 20px;
+        margin: 60px 0;
+    }
+    
+    .additional-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+    }
+    
+    .info-card {
+        background: var(--bg-card-light);
+        border-radius: 20px;
+        padding: 40px;
+        border: 2px solid transparent;
+        transition: all 0.4s ease;
+        text-align: center;
+    }
+    
+    .info-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--primary);
+    }
+    
+    .advantage-icon {
+        width: 80px;
+        height: 80px;
+        background: var(--bg-gradient);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 2rem;
+        margin: 0 auto 25px;
+        box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
+    }
+    
+    .info-card h3 {
+        color: var(--text-light);
+        margin-bottom: 20px;
+        font-size: 1.4rem;
+    }
+    
+    .info-card p {
+        color: var(--text-muted-light);
+        line-height: 1.7;
+        margin: 0;
+    }
+    
+    /* Процесс обучения - обновленный */
+    .process-section {
+        padding: 80px 0;
+    }
+    
+    .participation-steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-top: 60px;
+    }
+    
+    .step {
+        text-align: center;
+        position: relative;
+        padding: 30px;
+        background: var(--bg-card-light);
+        border-radius: 20px;
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+    }
+    
+    .step:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow);
+        border-color: var(--primary);
+    }
+    
+    .step-number {
+        width: 60px;
+        height: 60px;
+        background: var(--bg-gradient);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin: 0 auto 25px;
+        box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
+    }
+    
+    .step h3 {
+        color: var(--text-light);
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+    }
+    
+    .step p {
+        color: var(--text-muted-light);
+        line-height: 1.6;
+        margin: 0;
+    }
+    
+    /* Контакты - без карты */
+    .contact-section {
+        padding: 80px 0;
+        background: var(--bg-light);
+    }
+    
+    .contact-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    
+    .contact-info h3 {
+        color: var(--text-light);
+        margin-bottom: 40px;
+        font-size: 2rem;
+    }
+    
+    .contact-item {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 30px;
+        align-items: flex-start;
+    }
+    
+    .contact-icon {
+        width: 60px;
+        height: 60px;
+        background: var(--bg-gradient);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+        box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
+    }
+    
+    .contact-details h4 {
+        color: var(--text-light);
+        margin-bottom: 8px;
+        font-size: 1.2rem;
+    }
+    
+    .contact-details p {
+        color: var(--text-muted-light);
+        margin: 0;
+        line-height: 1.6;
+    }
+    
+    /* Убираем карту */
+    .contact-map {
+        display: none;
+    }
+    
+    /* Адаптивность */
+    @media (max-width: 768px) {
+        .intro-features {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .programs-container {
+            grid-template-columns: 1fr;
+        }
+        
+        .program-header,
+        .program-body {
+            padding: 30px;
+        }
+        
+        .participation-steps {
+            grid-template-columns: 1fr;
+        }
+        
+        .step {
+            padding: 25px;
+        }
+        
+        .info-card {
+            padding: 30px;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .intro-features {
+            grid-template-columns: 1fr;
+        }
+        
+        .feature {
+            padding: 15px;
+        }
+        
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+}
+    @media (max-width: 700px) {
+        .dpo-cards {
+            grid-template-columns: 1fr;
+        }
+        .dpo-card-header {
+            flex-direction: column;
+            text-align: center;
+        }
+        .dpo-card-icon {
+            margin: 0 auto;
+        }
+    }
+    
+    /* Секция ДПО — обновлённый дизайн */
+    .dpo-document-section {
+        padding: 50px 0 80px;
+    }
+    .dpo-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 32px;
+    }
+    .dpo-card {
+        background: var(--bg-card-light);
+        border-radius: 24px;
+        overflow: hidden;
+        border: 1px solid var(--border-light);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .dpo-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 50px rgba(79, 70, 229, 0.15);
+    }
+    .dpo-card-header {
+        padding: 28px 28px 20px;
+        background: linear-gradient(135deg, rgba(79, 70, 229, 0.08), rgba(6, 182, 212, 0.06));
+        border-bottom: 2px solid var(--border-light);
+        display: flex;
+        align-items: flex-start;
+        gap: 18px;
+    }
+    .dpo-card-icon {
+        width: 56px;
+        height: 56px;
+        min-width: 56px;
+        background: var(--bg-gradient);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+        box-shadow: 0 8px 20px rgba(79, 70, 229, 0.35);
+    }
+    .dpo-card-header h3 {
+        margin: 0;
+        font-size: 1.2rem;
+        line-height: 1.4;
+        color: var(--text-light);
+        font-weight: 700;
+    }
+    .dpo-list {
+        list-style: none;
+        padding: 24px 28px 28px;
+        margin: 0;
+    }
+    .dpo-list li {
+        position: relative;
+        padding: 18px 0 18px 44px;
+        margin: 0;
+        border-bottom: 1px solid var(--border-light);
+        line-height: 1.5;
+    }
+    .dpo-list li:last-child {
+        border-bottom: none;
+    }
+    .dpo-list li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 24px;
+        width: 10px;
+        height: 10px;
+        background: var(--primary);
+        border-radius: 50%;
+    }
+    .dpo-item-title {
+        display: block;
+        color: var(--text-light);
+        font-weight: 500;
+        margin-bottom: 6px;
+    }
+    .dpo-item-responsible {
+        display: block;
+        font-size: 0.9rem;
+        color: var(--text-muted-light);
+    }
+    
+    /* Тёмная тема — страница ДПО и весь контент */
+    [data-theme="dark"] .dpo-card {
+        background: #1e293b;
+        border-color: #334155;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    }
+    [data-theme="dark"] .dpo-card-header {
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(168, 85, 247, 0.1));
+        border-bottom-color: #334155;
+    }
+    [data-theme="dark"] .dpo-card-header h3 {
+        color: #f1f5f9 !important;
+    }
+    [data-theme="dark"] .dpo-item-title {
+        color: #e2e8f0 !important;
+    }
+    [data-theme="dark"] .dpo-item-responsible {
+        color: #94a3b8 !important;
+    }
+    [data-theme="dark"] .dpo-list li {
+        border-bottom-color: #334155;
+    }
+</style>
+
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="header-wrapper">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>ПЦК ФМД</h1>
+                        <p>Университетский колледж ОГУ</p>
+                    </div>
+                </a>
+                
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+                        <li><a href="staff.html"><i class="fas fa-chalkboard-teacher"></i> Состав ПЦК</a></li>
+                        <li><a href="disciplines.html"><i class="fas fa-book"></i> Дисциплины</a></li>
+                        <li><a href="additional-edu.html" class="active"><i class="fas fa-graduation-cap"></i> Доп. образование</a></li>
+                        <li><a href="week.html"><i class="fas fa-calendar-week"></i> Неделя ПЦК</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-controls">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- Заголовок страницы -->
+            <div class="page-header">
+                <h1 class="page-title">Дополнительное профессиональное образование</h1>
+                <p class="page-subtitle">Программы повышения квалификации и профессиональной переподготовки</p>
+            </div>
+            
+            <!-- Программы ДПО (контент из content/dpo.json или админки) -->
+            <div class="programs-section dpo-document-section">
+                <div class="dpo-cards" id="dpo-cards-container">
+                    <div class="dpo-card dpo-card-adult">
+                        <div class="dpo-card-header">
+                            <div class="dpo-card-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3>Программы дополнительного образования детей и взрослых</h3>
+                        </div>
+                        <ul class="dpo-list">
+                            <li>
+                                <span class="dpo-item-title">Математическое мышление как основа подготовки современного специалиста</span>
+                                <span class="dpo-item-responsible">Ответственный: Мещерякова И.Н.</span>
+                            </li>
+                            <li>
+                                <span class="dpo-item-title">Актуальные вопросы математики в рамках формирования личностных качеств обучающихся колледжа</span>
+                                <span class="dpo-item-responsible">Ответственный: Каримова Ю.М.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="dpo-card dpo-card-qualification">
+                        <div class="dpo-card-header">
+                            <div class="dpo-card-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3>Дополнительные профессиональные программы повышения квалификации</h3>
+                        </div>
+                        <ul class="dpo-list">
+                            <li>
+                                <span class="dpo-item-title">Решение практико-ориентированных задач средствами высшей математики</span>
+                                <span class="dpo-item-responsible">Ответственный: Мещерякова И.Н.</span>
+                            </li>
+                            <li>
+                                <span class="dpo-item-title">Вероятностные методы в решении профессионально-ориентированных задач</span>
+                                <span class="dpo-item-responsible">Ответственный: Мещерякова И.Н.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <h3>ПЦК ФМД</h3>
+                        <p>Предметно-цикловая комиссия<br>Физико-математических дисциплин</p>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Программы ДПО</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Повышение квалификации</a></li>
+                        <li><a href="#">Профессиональная переподготовка</a></li>
+                        <li><a href="#">Курсы для преподавателей</a></li>
+                        <li><a href="#">Семинары и мастер-классы</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> ул. Одесская, 148</p>
+                    <p><i class="fas fa-phone"></i> +7 (3532) 77-88-99</p>
+                    <p><i class="fas fa-envelope"></i> pck_physics_math@college.ogu.ru</p>
+                    <p><i class="fas fa-clock"></i> Пн-Пт: 9:00-17:00</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Документы</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Лицензия на образовательную деятельность</a></li>
+                        <li><a href="#">Образцы документов</a></li>
+                        <li><a href="#">Договор на обучение</a></li>
+                        <li><a href="#">Реквизиты для оплаты</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 ПЦК Физико-математических дисциплин Университетского колледжа ОГУ</p>
+                <p>Лицензия на образовательную деятельность №12345 от 12.01.2023</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        (function() {
+            var container = document.getElementById('dpo-cards-container');
+            if (!container) return;
+            fetch('content/dpo.json')
+                .then(function(r) { return r.ok ? r.json() : Promise.reject(); })
+                .then(function(data) {
+                    var adult = (data.adult_programs || []).map(function(p) {
+                        return '<li><span class="dpo-item-title">' + escapeHtml(p.title) + '</span><span class="dpo-item-responsible">Ответственный: ' + escapeHtml(p.responsible || '') + '</span></li>';
+                    }).join('');
+                    var qual = (data.qualification_programs || []).map(function(p) {
+                        return '<li><span class="dpo-item-title">' + escapeHtml(p.title) + '</span><span class="dpo-item-responsible">Ответственный: ' + escapeHtml(p.responsible || '') + '</span></li>';
+                    }).join('');
+                    container.innerHTML =
+                        '<div class="dpo-card dpo-card-adult">' +
+                        '<div class="dpo-card-header"><div class="dpo-card-icon"><i class="fas fa-users"></i></div>' +
+                        '<h3>Программы дополнительного образования детей и взрослых</h3></div>' +
+                        '<ul class="dpo-list">' + adult + '</ul></div>' +
+                        '<div class="dpo-card dpo-card-qualification">' +
+                        '<div class="dpo-card-header"><div class="dpo-card-icon"><i class="fas fa-graduation-cap"></i></div>' +
+                        '<h3>Дополнительные профессиональные программы повышения квалификации</h3></div>' +
+                        '<ul class="dpo-list">' + qual + '</ul></div>';
+                })
+                .catch(function() {});
+            function escapeHtml(s) {
+                var d = document.createElement('div');
+                d.textContent = s;
+                return d.innerHTML;
+            }
+        })();
+    </script>
+</body>
+</html>

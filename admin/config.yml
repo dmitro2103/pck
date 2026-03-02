@@ -1,0 +1,31 @@
+backend:
+  name: github
+  repo: dmitro2103/pck
+  branch: main
+  base_url: https://github.com
+
+locale: ru
+
+media_folder: "content/uploads"
+public_folder: "/content/uploads"
+
+collections:
+  - label: "Программы ДПО"
+    name: "dpo"
+    files:
+      - label: "Данные программ ДПО"
+        name: "dpo_data"
+        file: "content/dpo.json"
+        fields:
+          - label: "Программы для детей и взрослых"
+            name: "adult_programs"
+            widget: list
+            fields:
+              - { label: "Название программы", name: title, widget: string }
+              - { label: "Ответственный", name: responsible, widget: string }
+          - label: "Программы повышения квалификации"
+            name: "qualification_programs"
+            widget: list
+            fields:
+              - { label: "Название программы", name: title, widget: string }
+              - { label: "Ответственный", name: responsible, widget: string }
